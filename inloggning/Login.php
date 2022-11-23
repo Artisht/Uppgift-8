@@ -9,14 +9,14 @@
 <body>
     <a href="Index.html">fel besällning</a>
     <?php
-    $Besällning = "Ja vill ha två cheese";
-    $VadVarDet = "eetvvå cheese";
-    if ($_POST["Användarnamn"] == $Besällning && $_POST["lösenord"] == $VadVarDet)
+    $Användarnamn = "Kebabmannen";
+    $Lösen = "Adana";
+    if ($_POST["Användarnamn"] == $Användarnamn && $_POST["lösenord"] == $Lösen)
     {
-        echo("Ta din mat, fetto");
+        echo("Hej Kebabmannen");
     } else 
     {
-        echo("BETALA FUCKING MATEN DIN JÄVLA BASCHRO");
+        echo("Fel Användarnamn eller Lösenord.");
     }
     ?>
 </body>

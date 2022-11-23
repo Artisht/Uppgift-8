@@ -1,0 +1,79 @@
+
+#UPG 1
+##############
+
+$user = $_POST["namn"];
+
+echo "Hej $user";
+
+################
+
+#UPG 2
+##################
+
+
+echo ("<a href=" . $link_adress . " target='www.exempel.se'>Klicka här! </a>");
+    #### Du kan inte använda "dubbel fjuttar" inom "dubbel fjuttar" då får man använda 'ensam fjuttar'
+
+
+##############################
+
+#UPG 3
+
+#################
+
+$user = $_POST["user"];
+$passwd = $_POST["Passwd"];
+#### Sparar de inskickade värdena i variabler.
+
+$myfile = fopen("users.txt", "r") or die("Unable to open file!");
+#### Öpnar txt filen i "read" läge eller om detta är ej möjligt avslutar med medelandet "unable to open file"
+
+if(flock($myfile, LOCK_EX)){
+    #### Om filen låser sig på rätt vis så kommer koden spela.
+
+    while (($line = fgets($myfile)) !== false) {
+        #### Läser upp alla rader och stoppar när det inte finns några kvar.
+        $userpass = explode(":", $line);
+        #### Skapar en variabel med de olika raderna i txt filen där det finns en ":" mellan varje rad.
+        $pass = false;
+
+        if ($user==$userpass[0] && $passwd == $userpass[1]) {
+            #### Kollar om de inskickade parameterna instämmer till den information som finns i txt filen.
+            welcomeuser();
+            $pass = true;
+        }
+    }
+    if (!$pass) {
+        #### Om pass = false skicka felmedelande.
+        errormessage();
+    }
+}
+
+Denna kod kan bli använd för att kolla om det är en registerad användare som loggar in.
+
+Users txt innehåller användar namn och lösenord för hemsidan.
+
+#################
+
+#UPG 4
+
+##################
+
+Den inskickade adressen är en ip-adress och siffran 81 står för vilken port som webbläsaren ska koppla till.
+
+################
+
+#UPG 5
+
+###############
+
+
+När du öppnar table.php kommer det finnas en tabell med 2 kolumner med titlarna "Country" och "Capital" under titlarna kommer det stå olika länder till vänster och deras huvudstad till höger.
+Exempel:
+Country     Capital
+Sweden      Stockholm
+osv         osv
+
+
+##############################
